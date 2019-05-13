@@ -1,0 +1,17 @@
+driver:
+  name: vagrant
+
+provisioner:
+  name: shell
+platforms:
+  - name: mysql 
+    driver:
+      box: mysql
+      provider: virtualbox
+ 
+verifier:
+  name: inspec
+  inspec_tests:
+        - test/integration/default
+suites:
+  - name: default
